@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Place List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let place of apiPlaces">
+      <ion-list>
+        <ion-label text-wrap routerLink="/details/{{ place._id }}">
+          <h3>{{ place.name }}</h3>
+          <h4>{{ place.description }}</h4>
+          <p>{{ place.country }}</p>
+        </ion-label>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</ion-content>

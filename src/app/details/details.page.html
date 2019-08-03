@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pleces detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="places">
+    <ion-card-header>
+      <ion-card-subtitle>{{ place.name }}</ion-card-subtitle>
+      <ion-card-title>{{ place.description }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-icon name="right" slot="start"></ion-icon>{{ place.country }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

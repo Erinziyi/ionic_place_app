@@ -3,19 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Pleces detail</ion-title>
+    <ion-title>Places detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="places">
+  <ion-card *ngIf="place">
     <ion-card-header>
-      <ion-card-subtitle>{{ place.name }}</ion-card-subtitle>
-      <ion-card-title>{{ place.description }}</ion-card-title>
+      <ion-card-subtitle>{{ place?.name }}</ion-card-subtitle>
+      <ion-card-title>{{ place?.country }}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-icon name="right" slot="start"></ion-icon>{{ place.country }}
+      <h2>{{ place?.description }}</h2>
     </ion-card-content>
   </ion-card>
 </ion-content>

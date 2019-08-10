@@ -15,10 +15,15 @@ export class DetailsPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      let id = params["id"];
-      console.log(id);
-      this.place = this.placeService.getItemById(id);
+    // this.route.params.subscribe(params => {
+    //   let id = params["id"];
+    //   console.log(id);
+    //   this.place = this.placeService.getItemById(id);
+    // });
+
+    let id = this.route.snapshot.paramMap.get("place_id");
+    this.placeService.getPlaceById(id).subscribe(resp => {
+      this.place = resp;
     });
   }
 }

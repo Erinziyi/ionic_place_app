@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-title>Place List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <!-- <ion-list>
     <ion-item button *ngFor="let place of apiPlaces">
       <ion-list>
         <ion-label text-wrap routerLink="/details/{{ place._id }}">
@@ -15,5 +15,34 @@
         </ion-label>
       </ion-list>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile, and
+      climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item *ngFor="let place of apiPlaces">
+    <ion-thumbnail slot="start">
+      <img
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="
+      />
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{ place.name }}</h2>
+      <p>{{ place.country }}</p>
+    </ion-label>
+    <ion-button fill="outline" slot="end" [routerLink]="['/details', place._id]"
+      >View</ion-button
+    >
+  </ion-item>
+  <ion-button color="primary" expand="full" routerLink="/review/"
+    >ADD NEW REVIEW</ion-button
+  >
 </ion-content>

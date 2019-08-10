@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: "./places/places.module#PlacesPageModule"
   },
   {
-    path: "details/:id",
+    path: "details/:place_id",
     loadChildren: "./details/details.module#DetailsPageModule"
   }
 ];
